@@ -11,6 +11,7 @@ Just add LoadingIcon.java to your project and customize your loading icon as you
     layout.addView(icon);
 ```
 Default icon:
+
 <img src="https://media.giphy.com/media/xTiTngbSVlVQv1cZjy/giphy.gif" width="270" style="margin-right:10px;">
 
 Methods:
