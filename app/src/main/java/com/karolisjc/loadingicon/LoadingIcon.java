@@ -53,29 +53,20 @@ public class LoadingIcon extends View {
     int[] angles = new int[lineCount];
 
 
-    public LoadingIcon(Context context, int w, int h){
+    public LoadingIcon(Context context){
         super(context);
-//        width = w;
-//        height = h;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-
-
-
-
         for (int i = 0; i < lineCount; i++) {
             canvas.drawArc(mOval[i], startAngle, angles[i], false, paint[i]);
             canvas.drawArc(mOval[i], startAngle, -angles[i], false, paint[i]);
-
         }
-
-
     }
 
 
-    public void startAnimation() {
+    private void startAnimation() {
         ValueAnimator anim = getValueAnimator();
         anim.setRepeatCount(ValueAnimator.INFINITE);
         anim.setInterpolator(interpolator);
@@ -91,7 +82,6 @@ public class LoadingIcon extends View {
             public void onAnimationUpdate(ValueAnimator animation) {
                 int j;
                 for (int i = 0; i < lineCount; i++) {
-//                    Log.d("height55", "" + height + " " + width);
                     if (inverted) j = i;
                     else j = lineCount - i;
                     int angle = Math.round(
@@ -139,25 +129,13 @@ public class LoadingIcon extends View {
 
 
 
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
 
-    }
 
-    @Override
-    public void onSizeChanged (int w, int h, int oldw, int oldh){
-        super.onSizeChanged(w, h, oldw, oldh);
-//        width = w;
-//        height = h;
-
-    }
 
     private float adjustFraction(float fraction){
         if (fraction > 1f)
             return fraction - 1f;
         else return fraction;
-//        return fraction;
     }
 
     public void setIconDuration(long duration){

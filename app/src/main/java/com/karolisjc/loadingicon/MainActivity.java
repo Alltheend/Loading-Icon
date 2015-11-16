@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         layout = (RelativeLayout) findViewById(R.id.layout);
         params = new RelativeLayout.LayoutParams(500, 500);
-        icon = new LoadingIcon(this, params.width, params.height);
+        icon = new LoadingIcon(this);
         icon.setLayoutParams(params);
         layout.addView(icon);
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     public void setView(){
 
         layout.removeView(icon);
-        icon = new LoadingIcon(this, params.width, params.height);
+        icon = new LoadingIcon(this);
         icon.setIconColor(new String[]{
                 "#DA0124" , "#000000"});
         icon.setIconBgColor("#ffffff");
