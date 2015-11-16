@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         layout = (RelativeLayout) findViewById(R.id.layout);
-        params = new RelativeLayout.LayoutParams(2000, 2000);
+        params = new RelativeLayout.LayoutParams(500, 500);
         icon = new LoadingIcon(this, params.width, params.height);
-        icon.setIconLines(300);
         icon.setLayoutParams(params);
         layout.addView(icon);
 
